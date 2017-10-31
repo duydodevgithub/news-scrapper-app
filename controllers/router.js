@@ -22,6 +22,13 @@ router.get("/", function(req, res){
         console.log("Clear documents");
     });
     res.render("index");
+});
+
+router.get("/art", function(req, res){
+    //extract data from mongoDB and send to handlebars    - outside request         
+    Content.find({"saved" : false}).then(function(result){
+        res.render("index", {result: result});
+    });
 })
 
 //listen to /getnews GET request and save content to databse
@@ -86,6 +93,7 @@ router.get("/saveArticle/:_id", function(req, res){
         // If an error occurred, send it to the client
         console.log("Error");
       });
+    res.redirect("/art")
 })
 
 //GET to delete article to database
