@@ -35,10 +35,11 @@
                         <p><a href="{{url}}">{{url}}</a></p>
                     </div>
                     <div class="col-lg-3">
-                        <form action="/saveArticle/{{_id}}" method="GET">
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#{{_id}}">To add notes</button>
-                            <button type="submit" class="btn btn-primary">To save article</button>   
+                        <form action="/deleteArticle/{{_id}}" method="GET">
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#{{id}}">To add notes</button>
+                            <button type="submit" class="btn btn-danger">Delete article</button>  
                         </form>
+                         
                     </div>
                 </div>
             </div>
@@ -51,7 +52,7 @@
 {{!-- modal togger code --}}
 <!-- Modal -->
 {{#each result}}
-<div id="{{_id}}" class="modal fade" role="dialog">
+<div id="{{id}}" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -63,13 +64,13 @@
             Your note saved here
         </div>
         <hr>
-      <form action="/addNote/{{_id}}" method="POST">
+      <form action="/addNote" method="POST">
         <div class="modal-body">
             <div class="form-group">
                 <label for="comment">Your note:</label>
-                <textarea name="comment" class="form-control" rows="5" id="comment" style="resize: none" ></textarea>
+                <textarea class="form-control" rows="5" id="comment" style="resize: none" ></textarea>
             </div>
-            <button type="submit" class="btn btn-default" data-dismiss="modal">Add Note</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Add Note</button>
             {{!-- <button type="button" class="btn btn-default" data-dismiss="modal">Delete Note</button> --}}
         </div>
         {{!-- <div class="modal-footer">
