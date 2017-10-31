@@ -1,0 +1,33 @@
+{
+  "name": "news-scrapper-app",
+  "version": "1.0.0",
+  "description": "* App that lets users view and leave comments on the latest news. ### Technology used     * HTML     * CSS     * Express     * Handlebars     * MongoDB     * Cheerio     * Bootstrap",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duydodevgithub/news-scrapper-app.git"
+  },
+  "keywords": [
+    "duydo"
+  ],
+  "author": "duydo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duydodevgithub/news-scrapper-app/issues"
+  },
+  "homepage": "https://github.com/duydodevgithub/news-scrapper-app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.12.5",
+    "request": "^2.83.0"
+  }
+}

@@ -1,0 +1,3 @@
+$("#getNews").on("click", function(){
+    
+})
