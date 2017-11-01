@@ -16,7 +16,8 @@ var ContentSchema = new Schema({
     note: {
         type: String,
         require: true,
-        trim: true
+        trim: true,
+        default: "default note"
     },
     saved: {
         type: Boolean,

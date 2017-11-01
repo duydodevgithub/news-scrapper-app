@@ -27,6 +27,7 @@ router.get("/", function(req, res){
 router.get("/art", function(req, res){
     //extract data from mongoDB and send to handlebars    - outside request         
     Content.find({"saved" : false}).then(function(result){
+        // console.log(result);
         res.render("index", {result: result});
     });
 })
@@ -71,7 +72,7 @@ router.get("/getnews", function(req, res){
     Content.find({"saved" : false}).then(function(result){
         res.render("index", {result: result});
     });
-    },3000);
+    },4000);
 });
 
 //POST request when click save button
@@ -112,9 +113,9 @@ router.get("/deleteArticle/:_id", function(req, res){
 });
 
 //addNote
-
 router.post("/addNote/:_id", function(req, res){
-    console.log(req.params);
+    Content.findOneAndUpdate({_id: req.params._id}, {note: req.body.comment})
+    res.redirect("/art");
 })
 
 module.exports = router;
